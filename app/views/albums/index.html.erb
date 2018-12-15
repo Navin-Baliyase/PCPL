@@ -4,45 +4,11 @@
       <h1 class="jumbotron-heading">PCPL Album</h1>
       <p class="lead text-muted">PCPL allow multiple image gallery for any user , it will enhance the user experience
         and minimize the usage of image space . User can add the image gallery on hyperlink or Image from create
-        page.</p>
+      page.</p>
+    </div>
+    <div class="col-lg-12 col-md-12 pull-right">
+      <%= link_to 'New Album', new_album_path, {class: "btn btn-success"} %>
     </div>
   </section>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-
-
-        <% @albums.each do |album| %>
-          <% if !album.blank? %>
-
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <%= link_to (image_tag album.photos.first.variant(resize: "348x225"), class: "card-img-top"), album if album && album.photos %>
-                <div class="card-body">
-                  <p class="card-text">Album : <%= album.name if album.name %></p>
-                  <!--<p class="card-text">Owner : <%#= album.owner if album.owner %></p>-->
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <%= button_tag(type: 'button', class: "btn btn-sm btn-outline-secondary") do %>
-                        <%= link_to 'View', album %>
-                      <% end %>
-                      <%= button_tag(type: 'button', class: "btn btn-sm btn-outline-secondary") do %>
-                        <%= link_to 'Edit', edit_album_path(album) %>
-                      <% end %>
-                    </div>
-                    <small class="text-muted">9 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render 'album', albums: @albums %>
 </main>
-<%= link_to 'New Album', new_album_path, {class: "btn btn-success"} %>
-

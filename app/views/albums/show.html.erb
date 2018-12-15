@@ -1,6 +1,5 @@
-<div class="jumbotron">
+
   <div class="container">
-    <h2 class="pcpl-center"> <%= @album.name if @album && @album.name %> Slideshow</h2>
     <div class="pcpl-content pcpl-display-container">
       <% @album.photos.each do |photo| %>
         <%= image_tag (photo.variant(resize: "800x450")), {class: "mySlides", alt: "myiamge", style: "width:100%"} %>
@@ -8,10 +7,15 @@
       <button class="pcpl-button pcpl-black pcpl-display-left" onclick="plusDivs(-1)">&#10094;</button>
       <button class="pcpl-button pcpl-black pcpl-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
-    <h2 class="pcpl-center">BY: <%= @album.owner if @album && @album.owner %></h2>
+	<div class="pcpl-content pcpl-display-container">
+	<h3 class="pcpl-center"> <%= @album.name if @album && @album.name %> Slideshow</h3><br>
+    <h4 class="pcpl-center">By: <%= @album.owner if @album && @album.owner %></h4>
+	<div class="pull-right">
     <%= link_to 'Back', albums_path, {class: "btn btn-success"} %>
+	</div>
+	</div>
   </div>
-</div>
+
 
 <script>
     var slideIndex = 1;

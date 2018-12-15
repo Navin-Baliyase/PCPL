@@ -1,10 +1,14 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
+  def user_albums
+      @albums = current_user.albums
+   end
+
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.all.order(created_at: :desc)
   end
 
   # GET /albums/1

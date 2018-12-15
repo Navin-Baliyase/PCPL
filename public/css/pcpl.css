@@ -13,9 +13,12 @@
 .pcpl-content {
     max-width: 980px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;	
 }
 
+.pcpl > img {
+	height: 75vh;
+}
 
 
 .pcpl-display-container {
@@ -42,3 +45,18 @@
     color: green;
     float: right;
 }
+
+.no-padding{ padding-left: 0; padding-right:0 }
+
+body > .jumbotron{
+	    margin-top: 80px;
+}
+
+body {
+    background-color: #eee;
+}
+
+.pcpl-content > img { height: 75vh; }
+
+
+.album img { width: 348px; height:196px }
