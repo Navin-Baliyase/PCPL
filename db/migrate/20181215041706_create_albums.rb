@@ -3,7 +3,6 @@ class CreateAlbums < ActiveRecord::Migration[5.2]
     create_table :albums do |t|
       t.string :name
       t.string :owner
-      t.date :created_date
 
       t.timestamps
     end

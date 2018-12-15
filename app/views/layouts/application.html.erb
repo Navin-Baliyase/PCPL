@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PCPL</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCPL</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link href="/css/pcpl.css" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-	<!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand">Navin's Gallery</div>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <div class="navbar-form navbar-right">
-            <div class="navbar-brand"><% if user_signed_in? %>
-		  Logged in as <strong><%= current_user.email %></strong>.
-		  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-		  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-		<% else %>
-		  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-		  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-		<% end %></div>
-          </div>
-        </div><!--/.navbar-collapse -->
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand">Navin's Gallery</div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <div class="navbar-form navbar-right">
+        <div class="navbar-brand">
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+          <% end %></div>
       </div>
-    </nav>
-	
-		<div class="jumbotron">
-		<div class="container">
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
     <%= yield %>
-	</div>
-	</div>
-  </body>
+  </div>
+</div>
+</body>
 </html>

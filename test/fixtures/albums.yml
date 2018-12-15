@@ -3,9 +3,7 @@
 one:
   name: MyString
   owner: MyString
-  created_date: 2018-12-12
 
 two:
   name: MyString
   owner: MyString
-  created_date: 2018-12-12
