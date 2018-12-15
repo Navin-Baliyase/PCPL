@@ -9,6 +9,7 @@
       <button class="pcpl-button pcpl-black pcpl-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
     <h2 class="pcpl-center">BY: <%= @album.owner if @album && @album.owner %></h2>
+    <%= link_to 'Back', albums_path, {class: "btn btn-success"} %>
   </div>
 </div>
 

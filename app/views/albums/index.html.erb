@@ -7,8 +7,6 @@
         page.</p>
     </div>
   </section>
-
-
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row">
@@ -16,8 +14,6 @@
 
         <% @albums.each do |album| %>
           <% if !album.blank? %>
-
-
 
 
             <div class="col-md-4">
@@ -48,14 +44,5 @@
     </div>
   </div>
 </main>
-
-
-
-
-
-
-
-
-
-  <%#= link_to 'New Album', new_album_path, {class: "btn btn-success"} %>
+<%= link_to 'New Album', new_album_path, {class: "btn btn-success"} %>
 
