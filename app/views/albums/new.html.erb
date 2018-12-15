@@ -1,5 +1,9 @@
-<h1>New Album</h1>
-
-<%= render 'form', album: @album %>
-
-<%= link_to 'Back', albums_path %>
+<div class="jumbotron">
+  <div class="container">
+    <h2 class="pcpl-center"> New Album</h2>
+    <div class="pcpl-content pcpl-display-container">
+      <%= render 'form', album: @album %>
+    </div>
+    <%= link_to 'Back', albums_path, {class: "btn btn-primary"} %>
+  </div>
+</div>
