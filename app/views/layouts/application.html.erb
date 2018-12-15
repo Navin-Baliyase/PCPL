@@ -10,45 +10,47 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-   <link href="/css/pcpl.css" rel="stylesheet">
+  <link href="/css/pcpl.css" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/"><div class="navbar-brand">Navin's Gallery</div></a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <div class="navbar-form navbar-right">
-        <div class="navbar-brand">
-          <% if user_signed_in? %>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/"><div class="navbar-brand">Navin's Gallery</div></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-right">
+          <div class="navbar-brand">
+            <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
             <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-          <% else %>
+            <% else %>
             <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
-          <% end %>
-          | <%= link_to "My albums", "/photos", :class => 'navbar-link' %>
+            <% end %>
+            | <%= link_to "My albums", "/photos", :class => 'navbar-link' %>
+          </div>
         </div>
       </div>
+      <p id="notice"><%= notice %></p>
     </div>
-    <p id="notice"><%= notice %></p>
+  </nav>
+  <div class="jumbotron">
+    <div class="container">
+      <%= yield %>
+    </div>
   </div>
-</nav>
-
-<div class="jumbotron">
-  <div class="container">
-    <%= yield %>
-  </div>
-</div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

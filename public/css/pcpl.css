@@ -60,3 +60,11 @@ body {
 
 
 .album img { width: 348px; height:196px }
+
+.pt-5, .py-5 {
+    padding-top: 3rem!important;
+}
+
+.bg-dark {
+    background-color: #343a40!important;
+}
