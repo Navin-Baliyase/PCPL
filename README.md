@@ -4,16 +4,16 @@ Gallery Locker
 Ruby version - 2.4.4
 Rails verion - 5.2.2
 
-#gems
+# gems
 devise - Authentication
 mini_magick - Resizing Image
 
-#Dependency
+# Dependency
 ImageMagick on server/system
 
-#Concept
+# Concept
 Active Storage
 
-#Routes
+# Routes
 /albums - Home Page with 25 latest Galleries.
 /photos - User page with all his galleries.
