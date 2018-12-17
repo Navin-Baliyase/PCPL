@@ -5,6 +5,7 @@ ruby '2.4.4'
 
 gem 'devise'
 gem 'mini_magick'
+gem 'will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'

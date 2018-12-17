@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   def user_albums
-      @albums = current_user.albums
+      @albums = current_user.albums.paginate(:page => params[:page], :per_page => 6)
    end
 
   # GET /albums
